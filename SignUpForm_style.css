@@ -1,0 +1,87 @@
+@font-face {
+  font-family: Oswald;
+  src: url(./src/Oswald-VariableFont_wght.ttf);
+}
+:root{
+  --fontSize:min(3vh, 3vw);
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  
+}
+
+.leftSide {
+  width: 40vw;
+  height: 100vh;
+  background-image: url(./Images/city‫Nigth.jpg);
+  background-size: cover;
+
+}
+.rigthSide {
+  width: 60vw;
+  height: 100vh;
+  background-color: rgb(250, 249, 246);
+ 
+  
+ 
+}
+.logo {
+  --fontSizeLogo:min(10vh, 7vw);
+  font-size: var(--fontSizeLogo);
+  font-family: Oswald;
+  color: white;
+  width: 100%;
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 20vh;
+  background-color: rgba(153, 51, 255, 0.5);
+  gap: 1%;
+}
+img {
+  
+  max-height: 9vh;
+  height: auto;
+  max-width: min(22%,10vw);
+  width: auto;
+  display: inline-block;
+  min-height: min(7vh, 7vw);
+}
+.third{
+  height: 33.333%;
+  width: 100%;
+}
+.formContainer{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30% 30%;
+  
+}
+.top {
+  padding: 8% 5% 5% 5%;
+  font-size: var(--fontSize);
+}
+.bottom{
+  padding-left: 5%;
+  font-size: var(--fontSize);
+}
+.middle{
+  background-color: #ffffff;
+  padding-left: 5%;
+}
+p{
+  margin-top: 3%;
+}
+.nameContainer, .contactContainer, .passwordContainer{
+  display: flex;
+  flex-shrink: 2;
+}
+.name, .contactInfo, .password{
+  display: flex;
+  flex-direction: column;
+}
