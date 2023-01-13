@@ -21,56 +21,67 @@
       <div class="top third">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         </p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate.</p>
+        <p class="two">Duis aute irure dolor in reprehenderit in voluptate.</p>
       </div>
       <div class="middle third">
-        <h4>Registration</h4>
-        <form action="#">
-          <div class="formContainer">
-            <div class="nameContainer">
+        <form action="http://httpbin.org/post" method="post" id="form">
+          <fieldset>
+            <legend>Registration</legend>
+            <div class="formContainer">
               <div class="name">
-                <label for="firstName">FIRST NAME</label>
-                <input type="text" name="name" id="firstName" />
+                <label for="firstName">FIRST_NAME</label>
+                <input type="text" name="firstName" id="firstName" placeholder="John" maxlength="25" required/>
+                <div class="firstNameMessage">*Required</div>
               </div>
               <div class="name">
-                <label for="lastName">LAST NAME</label>
-                <input type="text" name="lastName" id="lastName" />
+                <label for="lastName">LAST_NAME</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Doe" maxlength="25" required/>
+                <div class="lastNameMessage">*Required</div>
               </div>
-            </div>
-            <div class="contactContainer">
+
               <div class="contactInfo">
                 <label for="email">EMAIL</label>
-                <input type="emial" name="email" id="email" />
+                <input type="email" name="email" id="email" placeholder="your@example.com" pattern="^\S+@\S+\.\S+$"
+                required/>
+                <div class="emailMessage">*Required</div>
               </div>
               <div class="contactInfo">
-                <label for="phone">PHONE NUMBER</label>
-                <input type="number" id="phone" name="phoneNumber" />
+                <label for="phone">PHONE_NUMBER</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{9}" maxlength="9" minlength="9" placeholder="9 numbers (no dash)" required />
+                <div class="phoneMessage">*Required</div>
               </div>
-            </div>
-            <div class="passwordContainer">
+
               <div class="password">
                 <label for="password">PASSWORD</label>
-                <input type="password" id="password" class="password" />
+                <input type="password" id="password" class="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required/>
+                <div class="passwordMessage">
+                  <div class="length">*Must be at least 8 characters long</div>
+                  <div class="number">*Have a number</div>
+                  <div class="capital">*Have a capital letter</div>
+                  <div class="capital">*Have a speacial character</div>
+                </div>
               </div>
-              <div class="password">
-                <label for="confirmPassword">CONFIRM PASSWORD</label>
+              <div>
+                <label for="confirmPassword">CONFIRM_PASSWORD</label>
                 <input
                   type="password"
                   id="confirmPassword"
                   name="confirmPasword"
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" 
+                  required
                 />
+                <div id="confirmPasswordMessage">*Passwords don't match</div>
               </div>
             </div>
-          </div>
+          </fieldset>
         </form>
       </div>
       <div class="bottom third">
-        <button>Create Account</button>
-        <div>Already have an account? Log in</div>
+        <button type="submit" form="form">Create Account</button>
+
+        <div>Already have an account? <span>Log in </span></div>
       </div>
     </div>
   </body>
